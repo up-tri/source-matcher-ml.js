@@ -1,11 +1,13 @@
 {
   "name": "source_matcher",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "source_matcher_ml.js",
   "license": "MIT",
   "dependencies": {
     "@types/glob": "^7.1.1",
+    "chalk": "^3.0.0",
     "convert-array-to-csv": "^1.0.9",
+    "figlet": "^1.2.4",
     "glob": "^7.1.6"
   }
 }
