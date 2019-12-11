@@ -1,0 +1,6 @@
+/node_modules/*
+/wp-content/*
+webpack.config.js
+bs-config.js
+postcss.config.js
+*.html

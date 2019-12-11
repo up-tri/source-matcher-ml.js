@@ -1,0 +1,11 @@
+{
+  "name": "source_matcher",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@types/glob": "^7.1.1",
+    "convert-array-to-csv": "^1.0.9",
+    "glob": "^7.1.6"
+  }
+}
