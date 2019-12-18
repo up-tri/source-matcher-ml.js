@@ -11,6 +11,16 @@ if (args.length < 2) {
   process.exit(1);
 }
 
+const convertArrayToTSV = (lines) => {
+  let outStr = "";
+  for (const line of lines) {
+    const tabRemovedLine = line.map(item => item.replace(/\t/g, " "));
+    tabRemovedLine.concat("\t");
+    outStr += (tabRemovedLine + "\n");
+  }
+  return outStr;
+};
+
 let targetDir = process.cwd();
 let extensions = [];
 let regex = new RegExp();
@@ -122,7 +132,7 @@ if (-1 !== helpIdx) {
       }
       switch (outFlg) {
         case "stdout":
-          console.log(convertArrayToCSV(out));
+          console.log(convertArrayToTSV(out));
           break;
         case "csv":
           fs.writeFileSync(outFileName, convertArrayToCSV(out));
