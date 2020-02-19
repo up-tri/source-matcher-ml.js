@@ -14,8 +14,8 @@ if (args.length < 2) {
 const convertArrayToTSV = (lines) => {
   let outStr = "";
   for (const line of lines) {
-    const tabRemovedLine = line.map(item => item.replace(/\t/g, " "));
-    tabRemovedLine.concat("\t");
+    let tabRemovedLine = line.map(item => item.replace(/\t/g, " "));
+    tabRemovedLine = tabRemovedLine.join("\t");
     outStr += (tabRemovedLine + "\n");
   }
   return outStr;
@@ -100,7 +100,7 @@ if (-1 !== helpIdx) {
       specifiedExtensionString = `.${extensions[0]}`;
       break;
     default:
-      specifiedExtensionString = `.{${extensions.concat(", ")}}`;
+      specifiedExtensionString = `.{${extensions.join(", ")}}`;
       break;
   }
 
@@ -139,6 +139,7 @@ if (-1 !== helpIdx) {
           break;
         case "json":
           fs.writeFileSync(outFileName, JSON.stringify(out, {}, 2));
+          break;
       }
     }
   });
